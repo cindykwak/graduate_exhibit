@@ -105,6 +105,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   
 }
+ a{
+  text-decoration: none;
+  color: white;
+ }
 
 .index-category{
   width: 100%;
@@ -186,3 +190,106 @@ h3{
   text-transform: uppercase;
 }
 
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: none;
+  padding: 8px 12px;
+  position: absolute;
+  top:50%;
+  width: 100%;
+  margin-top: -400px; text-align: center; 
+}
+
+.navbar_logo{
+  font-size: 24px;
+  color: white;
+}
+
+.navbar_logo i{
+  color: #1eff00;
+}
+
+.navbar_menu{
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.navbar_menu > li {
+  display: inline-block; 
+  width: 80px;
+  padding: 5px 10px;
+  
+  text-align: center;
+}
+ul, ol, li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.navbar_menu > li ul.dropdown{
+  display: none;
+  position: absolute;
+  top: 40px;
+}
+
+ul.navbar_menu > li:hover ul.dropdown{
+  display:block;
+}
+
+ul.navbar_menu > li {
+  display: inline-block;
+  width:80px;
+  padding: 5px 10px;
+  
+  text-align: center;
+
+}
+
+.navbar_menu li{
+  padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+  background-color: orange;
+  border-radius: 4px;
+}
+
+.navbar_icons{
+  list-style: none;
+  color: white;
+  display: flex;
+}
+
+.navbar_icons li{
+  padding: 8px 12px;
+}
+
+@media screen and (max-width: 768px){
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar_menu{
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+  }
+
+  .dropdown{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.jb-box{
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin: 0px auto;
+  position: relative;
+
+}

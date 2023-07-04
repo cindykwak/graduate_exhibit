@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width" , initial-scale="1.0">
-	<title>Three.JS WebSite</title>
+	<title>graduate website</title>
 	<link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -20,349 +20,47 @@
 			}
             
 		</script>
-	<!--<style>
-		#blocker {
-			position: fixed;
-			width: 100% 0;
-			background-color: rgba(0, 0, 0, 0);
-			bottom: 0%;
-		}
-	</style>-->
 
-	<!--<script type="module">
-
-		import * as THREE from 'three';
-
-		import { FontLoader } from 'three/addons/loaders/FontLoader.js';
-		import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
-
-		import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
-
-
-		THREE.Cache.enabled = true;
-
-		let container;
-
-		let camera, cameraTarget, scene, renderer;
-
-		let group, textMesh1, textMesh2, textGeo, materials;
-
-		let firstLetter = true;
-
-		let text = 'Art Of Three.js',
-
-			bevelEnabled = true,
-
-			font = undefined,
-
-			fontName = 'helvetiker', // helvetiker, optimer, gentilis, droid sans, droid serif
-			fontWeight = 'bold'; // normal bold
-
-
-		const height = 20,
-			size = 60,
-			hover = 30,
-
-			curveSegments = 4,
-
-			bevelThickness = 2,
-			bevelSize = 1.5;
-
-		const mirror = true;
-
-		const fontMap = {
-
-			'helvetiker': 0,
-
-		};
-
-		const weightMap = {
-
-			'regular': 0,
-			'bold': 1
-
-		};
-
-		const reverseFontMap = [];
-		const reverseWeightMap = [];
-
-		for (const i in fontMap) reverseFontMap[fontMap[i]] = i;
-		for (const i in weightMap) reverseWeightMap[weightMap[i]] = i;
-
-		let targetRotation = 0;
-		let targetRotationOnPointerDown = 0;
-
-		let pointerX = 0;
-		let pointerXOnPointerDown = 0;
-
-		let windowHalfX = window.innerWidth / 2;
-
-		let fontIndex = 1;
-
-		init();
-		animate();
-
-		function init() {
-
-			container = document.createElement('div');
-			document.body.appendChild(container);
-
-			// CAMERA
-
-			camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1500);
-			camera.position.set(0, 200, 700);
-
-			cameraTarget = new THREE.Vector3(0, 0, 0);
-
-			// SCENE
-
-			scene = new THREE.Scene();
-			scene.background = new THREE.Color(0X000000);
-			scene.fog = new THREE.Fog(0x000000, 1000, 250);
-
-			// LIGHTS
-
-			const dirLight = new THREE.DirectionalLight(0xffffff, 0.125);
-			dirLight.position.set(0, 0, 1).normalize();
-			scene.add(dirLight);
-
-			const pointLight = new THREE.PointLight(0xffffff, 2);
-			pointLight.color.setHSL(1, 0.5, 1);
-			pointLight.position.set(0, 100, 90);
-			scene.add(pointLight);
-
-			materials = [
-				new THREE.MeshPhongMaterial({ color: 0x90a0ee, flatShading: true }), // front
-				new THREE.MeshPhongMaterial({ color: 0x90a0eebbbb }) // side
-			];
-
-			group = new THREE.Group();
-			group.position.y = 110;
-
-			scene.add(group);
-
-			loadFont();
-
-			const plane = new THREE.Mesh(
-				new THREE.PlaneGeometry(10000, 10000),
-				new THREE.MeshBasicMaterial({ color: 0x444, opacity: 0.8, transparent: true })
-			);
-			plane.position.y = 100;
-			plane.rotation.x = - Math.PI / 2;
-			scene.add(plane);
-
-			// RENDERER
-
-			renderer = new THREE.WebGLRenderer({ antialias: true });
-			renderer.setPixelRatio(window.devicePixelRatio);
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			container.appendChild(renderer.domElement);
-
-			// EVENTS
-
-			container.style.touchAction = 'none';
-			container.addEventListener('pointerdown', onPointerDown);
-
-			document.addEventListener('keypress', onDocumentKeyPress);
-			document.addEventListener('keydown', onDocumentKeyDown);
-
-			//
-
-			window.addEventListener('resize', onWindowResize);
-
-		}
-
-		function onWindowResize() {
-
-			windowHalfX = window.innerWidth / 2;
-
-			camera.aspect = window.innerWidth / window.innerHeight;
-			camera.updateProjectionMatrix();
-
-			renderer.setSize(window.innerWidth, window.innerHeight);
-
-		}
-
-		//
-
-		function onDocumentKeyDown(event) {
-
-			if (firstLetter) {
-
-				firstLetter = false;
-				text = '';
-
-			}
-
-			const keyCode = event.keyCode;
-
-			// backspace
-
-			if (keyCode == 8) {
-
-				event.preventDefault();
-
-				text = text.substring(0, text.length - 1);
-				refreshText();
-
-				return false;
-
-			}
-
-		}
-
-		function onDocumentKeyPress(event) {
-
-			const keyCode = event.which;
-
-			// backspace
-
-			if (keyCode == 8) {
-
-				event.preventDefault();
-
-			} else {
-
-				const ch = String.fromCharCode(keyCode);
-				text += ch;
-
-				refreshText();
-
-			}
-
-		}
-
-		function loadFont() {
-
-			const loader = new FontLoader();
-			loader.load('fonts/' + fontName + '_' + fontWeight + '.typeface.json', function (response) {
-
-				font = response;
-
-				refreshText();
-
-			});
-
-		}
-
-		function createText() {
-
-			textGeo = new TextGeometry(text, {
-
-				font: font,
-
-				size: size,
-				height: height,
-				curveSegments: curveSegments,
-
-				bevelThickness: bevelThickness,
-				bevelSize: bevelSize,
-				bevelEnabled: bevelEnabled
-
-			});
-
-			textGeo.computeBoundingBox();
-
-			const centerOffset = - 0.5 * (textGeo.boundingBox.max.x - textGeo.boundingBox.min.x);
-
-			textMesh1 = new THREE.Mesh(textGeo, materials);
-
-			textMesh1.position.x = centerOffset;
-			textMesh1.position.y = hover;
-			textMesh1.position.z = 0;
-
-			textMesh1.rotation.x = 0;
-			textMesh1.rotation.y = Math.PI * 2;
-
-			group.add(textMesh1);
-
-			if (mirror) {
-
-				textMesh2 = new THREE.Mesh(textGeo, materials);
-
-				textMesh2.position.x = centerOffset;
-				textMesh2.position.y = - hover;
-				textMesh2.position.z = height;
-
-				textMesh2.rotation.x = Math.PI;
-				textMesh2.rotation.y = Math.PI * 2;
-
-				group.add(textMesh2);
-
-			}
-
-		}
-
-		function refreshText() {
-
-			group.remove(textMesh1);
-			if (mirror) group.remove(textMesh2);
-
-			if (!text) return;
-
-			createText();
-
-		}
-
-		function onPointerDown(event) {
-
-			if (event.isPrimary === false) return;
-
-			pointerXOnPointerDown = event.clientX - windowHalfX;
-			targetRotationOnPointerDown = targetRotation;
-
-			document.addEventListener('pointermove', onPointerMove);
-			document.addEventListener('pointerup', onPointerUp);
-
-		}
-
-		function onPointerMove(event) {
-
-			if (event.isPrimary === false) return;
-
-			pointerX = event.clientX - windowHalfX;
-
-			targetRotation = targetRotationOnPointerDown + (pointerX - pointerXOnPointerDown) * 0.02;
-
-		}
-
-		function onPointerUp() {
-
-			if (event.isPrimary === false) return;
-
-			document.removeEventListener('pointermove', onPointerMove);
-			document.removeEventListener('pointerup', onPointerUp);
-
-		}
-
-		//
-
-		function animate() {
-
-			requestAnimationFrame(animate);
-
-			render();
-
-		}
-
-		function render() {
-
-			group.rotation.y += (targetRotation - group.rotation.y) * 0.05;
-
-			camera.lookAt(cameraTarget);
-
-			renderer.clear();
-			renderer.render(scene, camera);
-
-		}
-
-	</script>
-
--->
+		<style></style>
 </head>
 
 <body>
 
+	<div class="jb-box">
+		<video muted autoplay loop>
+			<source src="videos/none.mp4" type="video/mp4">
+			<strong>Your browser does not support the video tag.</strong>
+		</video>
+		<div class="jb-text">
+			<p>Lorem Ipsum Dolor</p>
+		</div>
+	</div>
+	<nav class ="navbar">
+		<div clss="navbar_logo">
+			<i class="fab fa-accusoft"></i>
+			<a herf="">project</a>
+		</div>
+
+		<ul class="navbar_menu">
+			<li class="menu1"><a href="">profile</a></li>
+			<li class="menu2"><a href="">portfolio</a>
+				<ul class="menu2_2 dropdown">
+					<li><a href="#">woven</a></li>
+					<li><a href="#">surface</a></li>
+					<li><a href="#">fashion</a></li>
+				</ul>
+			</li>
+			<li class="menu3"><a href="">offline</a></li>
+			<li class="menu4"><a href="">guestbook</a></li>
+		</ul>
+
+		<ul class="navbar_links">
+
+		</ul>
+	</nav>
+
+
+<!--
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Logo</a>
@@ -382,7 +80,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">우븐</a></li>
                   <li><a class="dropdown-item" href="#">서피스</a></li>
-                  <!--<li><hr class="dropdown-divider"></li>-->
+                  
                   <li><a class="dropdown-item" href="#">패션</a></li>
                 </ul>
               </li>
@@ -400,7 +98,7 @@
             </form>
           </div>
         </div>
-      </nav>
+      </nav>-->
 
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
