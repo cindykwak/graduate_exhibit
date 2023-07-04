@@ -103,13 +103,12 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  background-color : #000;
+  
 }
 
 .index-category{
   width: 100%;
   padding:4% 0;
-  background-color:#000;
   display: flex;
   justify-content: center;
   column-gap: 4%;
@@ -186,5 +185,4 @@ h3{
   font-weight: 6;
   text-transform: uppercase;
 }
-
 
