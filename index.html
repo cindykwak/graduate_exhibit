@@ -5,15 +5,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width" , initial-scale="1.0">
 	<title>graduate website</title>
-	<link href="css/styles.css" rel="stylesheet" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+	<link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" charset="utf-8"></script>
+	
 </head>
 
 <body>
+	
 
+	<div class="menu-btn">
+		<img src="images/btn_menu.svg">
+	</div>
 	<div class="side-bar">
 		<div class="close-btn">
-			<img src="images/img_termin.svg">
+			<img src="images/btn_close.svg">
 		</div>
 		<div class="menu">
 			<img src="images/img_category_ligo.png" style="display: block; margin:auto; margin-bottom: 52px; margin-top: 113px;">
@@ -31,6 +37,21 @@
 	</div>
 
 
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menu-btn').click(function(){
+				$('.side-bar').addClass('active ');
+				$('.menu-btn').css("visibility","hidden");
+			});
+
+			$('.close-btn').click(function(){
+				$('.side-bar').removeClass ('active');
+				$('.side-bar').removeClass ('active2');
+				$('.menu-btn').css("visibility","visible");
+			});
+
+		});
+	</script>
 	
 	
 
