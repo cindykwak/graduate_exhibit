@@ -25,12 +25,13 @@ body{
 }
 
 .side-bar{
-  background:rgba(219, 219, 219, 0.9);
-  width: 500px;
-  height: 1080px;
+  z-index: 1;
+  background:white;
+  width: 540px;
+  height: 990px;
   position: fixed;
   top: 0;
-  left: -100%;
+  left: -130%;
   overflow-y: auto;
   transition: 0.6s ease;
   transition-property: left;
@@ -41,9 +42,6 @@ body{
   
 }
 
-.side-bar.active2{
-  left: 0;
-}
 .side-bar .menu{
   width: 100%;
   margin-top: 100px;
@@ -89,15 +87,74 @@ body{
 
 .close-btn{
   position: absolute;
-  top: 20px;
-  margin-left: 20px;
+  top: 39px;
+  margin-left: 67px;
   cursor: pointer;
 }
 
 .menu-btn{
   position: absolute;
-  top: 20px;
-  margin-left: 20px;
+  top: 39px;
+  margin-left: 67px;
   cursor: pointer;
 }
 
+.nav-line{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  
+  top: 113px;
+}
+
+.nav-line img{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  width:fit-content;
+}
+
+.portfolio-nav ul{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-top: 150px;
+}
+
+.portfolio-nav ul li{
+  float: left;
+  margin: 0 80px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.portfolio-nav ul li a{
+  display: block; 
+  padding-top: 0px; 
+  padding-right: 20px; 
+  padding-bottom: 0px; 
+  padding-left: 20px; 
+  text-decoration: none;
+}
+
+.portfolio-woven{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 81px;
+  margin-left: 10px;
+  width:98vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(340px,350px));
+  
+}
+
+.portfolio-woven img{
+  width: 340px;
+  height: 473px;
+  object-fit: cover;
+  object-position: center;
+
+}
