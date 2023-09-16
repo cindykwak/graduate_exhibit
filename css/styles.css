@@ -1,5 +1,24 @@
 @charset "UTF-8";
-
+@font-face {
+  font-family: engFont;
+  src: url("../fonts/ClimateCrisis-Regular.ttf");
+}
+@font-face {
+  font-family: namuGothic;
+  src: url("../fonts/NanumGothic.ttf");
+}
+@font-face {
+  font-family: namuGothicBold;
+  src: url("../fonts/NanumGothicBold.ttf");
+}
+@font-face {
+  font-family: namuGothicExtraBold;
+  src: url("../fonts/NanumGothicExtraBold.ttf");
+}
+@font-face {
+  font-family: namuGothicLight;
+  src: url("../fonts/NanumGothicLight.ttf");
+}
 /*!
 * Start Bootstrap - Business Casual v7.0.9 (https://startbootstrap.com/theme/business-casual)
 * Copyright 2013-2023 Start Bootstrap
@@ -24,9 +43,14 @@ body{
   background-position: center;
 }
 
+.main-logo{
+  display: block; 
+  align-items: center;
+}
 .side-bar{
   z-index: 1;
-  background:white;
+  background: white;
+  background-image: url('../images/category_bgimg.png');
   width: 540px;
   height: 990px;
   position: fixed;
@@ -51,6 +75,7 @@ body{
 .side-bar .menu .item{
   position: relative;
   cursor: pointer;
+  font-family: engFont;
 }
 
 .side-bar .menu .item a{
@@ -62,6 +87,10 @@ body{
   margin-left: 30px;
 }
 
+.item2{
+  font-family: namuGothic;
+}
+
 .item2 a{
   position: relative;
   cursor: pointer;
@@ -70,7 +99,8 @@ body{
   text-decoration: none;
   display: block;
   padding: 6px 30px;
-  margin-left: 40px
+  margin-left: 40px;
+ 
 }
 
 .logo2{
@@ -120,7 +150,8 @@ body{
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin-top: 150px;
+  margin-top: 10px;
+  font-family: engFont;
 }
 
 .portfolio-nav ul li{
@@ -157,4 +188,10 @@ body{
   object-fit: cover;
   object-position: center;
 
+}
+
+.left-logo{
+  text-align: right;
+  font-family: engFont;
+  color: #656565;
 }
