@@ -124,53 +124,36 @@ body{
 
 .menu-btn{
   position: absolute;
-  top: 39px;
-  margin-left: 67px;
+  margin-top: 2.5vw;
+  margin-left: 2vw;
   cursor: pointer;
+  height: 1.5vw;
 }
 
-.nav-line{
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
-  
-  top: 113px;
-}
-
-.nav-line img{
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  object-fit: cover;
-  width:fit-content;
-}
 
 .portfolio-nav ul{
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin-top: 10px;
+  margin-top: 2vw;
   font-family: engFont;
 }
 
 .portfolio-nav ul li{
   float: left;
-  margin: 0 80px;
+  margin: 0 7vw;
   text-align: center;
-  font-size: 30px;
+  font-size: 2vw;
 }
 
 .portfolio-nav ul li a{
-  display: block; 
-  padding-top: 0px; 
-  padding-right: 20px; 
-  padding-bottom: 0px; 
-  padding-left: 20px; 
+
   text-decoration: none;
 }
 
-.portfolio-woven{
+
+
+.portfolio-img{
   position: absolute;
   justify-content: center;
   align-items: center;
@@ -182,7 +165,7 @@ body{
   
 }
 
-.portfolio-woven img{
+.portfolio-img img{
   width: 340px;
   height: 473px;
   object-fit: cover;
@@ -191,7 +174,22 @@ body{
 }
 
 .left-logo{
+  display: block;
+  margin-right: 1vw;
   text-align: right;
   font-family: engFont;
+  font-size: 2vw;
   color: #656565;
+
+}
+
+.web-logo{
+  display: inline-block;
+  margin: auto;
+  height: 6vw;
+}
+
+.hr-top{
+  border: solid 1.4px;
+  margin-top: 3vh;
 }
