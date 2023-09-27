@@ -47,6 +47,8 @@ body{
   display: block; 
   align-items: center;
 }
+
+/*=====sidebar======================================================*/
 .side-bar{
   z-index: 1;
   background: white;
@@ -116,6 +118,7 @@ body{
 }
 
 .close-btn{
+  z-index: 1;
   position: absolute;
   top: 39px;
   margin-left: 67px;
@@ -123,6 +126,7 @@ body{
 }
 
 .menu-btn{
+  z-index: 1;
   position: absolute;
   margin-top: 2.5vw;
   margin-left: 2vw;
@@ -130,6 +134,25 @@ body{
   height: 1.5vw;
 }
 
+/*===========bottom==================================================*/
+.bottom ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-top: 2vw;
+}
+
+.bottom ul li{
+  float: left;
+  margin: 0 7vw;
+  text-align: center;
+  font-size: 2vw;
+}
+
+.bottom ul li a{
+  text-decoration: none;
+}
+/*===========portfolio===============================================*/
 
 .portfolio-nav ul{
   display: flex;
@@ -157,8 +180,8 @@ body{
   position: absolute;
   justify-content: center;
   align-items: center;
-  margin-top: 81px;
-  margin-left: 10px;
+  margin-top: 1vw;
+  
   width:98vw;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(340px,350px));
@@ -179,12 +202,17 @@ body{
   text-align: right;
   font-family: engFont;
   font-size: 2vw;
+  margin-top: -30px;
   color: #656565;
+  
 
 }
+/*block을 사용하면 로고 있는 부분 horizon이 전부 클릭됨
+inline-block을 사용하면 상단 중앙정렬이 안됨...
+이 부분 해결봐야 함!! */
 
 .web-logo{
-  display: inline-block;
+  display: block;
   margin: auto;
   height: 6vw;
 }
@@ -192,4 +220,85 @@ body{
 .hr-top{
   border: solid 1.4px;
   margin-top: 3vh;
+}
+
+video{
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+/* ========index============================================= */
+
+
+
+#index1{
+  width: 100%;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+#index2{
+  width: 100%;
+  height: 100vh;
+  background-color: #656565;
+}
+.index-big {
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  height: 44vw;
+  float: left;
+}
+
+.index-text{
+  font-size: 1vw;
+}
+
+.index-logo{
+  height: 10vw;
+}
+
+.index-img{
+  height: 50vw;
+ 
+  float: right;
+}
+
+
+/*========profile=====================================================*/
+
+.profile-img{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vw;
+  width:98vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(15vw, 14vw));
+  
+}
+
+.profile-img img{
+  width: 13vw;
+  object-fit: cover;
+  object-position: center;
+
+}
+
+/*===========offline==================================================*/
+
+.offline-map{
+  width: 25vw;
+}
+
+.offline-poster{
+  width: 32vw;
+}
+
+.offline-category{
+  font-family: engFont;
+  text-align: center;
+  font-size: 2vw;
+}
+.offline-category div{
+  margin-top: 8vw;
 }
