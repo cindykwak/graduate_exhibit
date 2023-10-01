@@ -139,18 +139,28 @@ body{
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin-top: 2vw;
+  margin-top: 5vw;
 }
 
 .bottom ul li{
   float: left;
-  margin: 0 7vw;
-  text-align: center;
-  font-size: 2vw;
+  margin: 0 1vw;
+  font-size: 1vw;
+}
+
+.bottom ul li img{
+  width: 1.2vw;
 }
 
 .bottom ul li a{
   text-decoration: none;
+}
+
+.bottom-text{
+  margin-top: 2vw;
+  margin-bottom: 5vw;
+  text-align: center;
+  font-size: 1vw;
 }
 /*===========portfolio===============================================*/
 
@@ -282,6 +292,24 @@ video{
   object-fit: cover;
   object-position: center;
 
+}
+
+/*==========profile - detail==========================================*/
+.pf-detail-category ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-top: 5vw;
+}
+
+.pf-detail-category ul li{
+  float: left;
+  margin: 0 1vw;
+  font-size: 1vw;
+}
+
+.pf-detail-category ul li img{
+  
 }
 
 /*===========offline==================================================*/
