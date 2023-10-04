@@ -38,7 +38,7 @@
 
 body{
   
-  background: white;
+  background:white;
   background-size: cover;
   background-position: center;
 }
@@ -48,13 +48,15 @@ body{
   align-items: center;
 }
 
+
 /*=====sidebar======================================================*/
 .side-bar{
   z-index: 1;
   background: white;
   background-image: url('../images/category_bgimg.png');
-  width: 540px;
-  height: 990px;
+  width: 30vw;
+  height: 50vw;
+
   position: fixed;
   top: 0;
   left: -130%;
@@ -70,8 +72,19 @@ body{
 
 .side-bar .menu{
   width: 100%;
-  margin-top: 100px;
- 
+}
+
+.menu-logo{
+  display: block; 
+  margin:auto; 
+  width: 20vw;
+  margin-top: 3vw;
+}
+
+.menu-line{
+  display: block; 
+  margin:auto; 
+  width: 90%
 }
 
 .side-bar .menu .item{
@@ -81,12 +94,11 @@ body{
 }
 
 .side-bar .menu .item a{
-  color: #3A3A3A;
-  font-size: 28px;
+  color: black;
+  font-size: 1.5vw;
   text-decoration: none;
   display: block;
-  padding: 18px 30px;
-  margin-left: 30px;
+  padding: 1vw 3vw;
 }
 
 .item2{
@@ -96,33 +108,21 @@ body{
 .item2 a{
   position: relative;
   cursor: pointer;
-  color: #3A3A3A;
-  font-size: 18px;
+  color: black;
+  font-size: 1vw;
   text-decoration: none;
   display: block;
-  padding: 6px 30px;
-  margin-left: 40px;
+  padding: 0.5vw 3.5vw;
  
-}
-
-.logo2{
-  font-size: 40px;
-  text-align: center;
-  margin-top: 40px;
-}
-
-
-.item3{
-  text-align: center;
-  margin-top: 60px;
 }
 
 .close-btn{
   z-index: 1;
   position: absolute;
-  top: 39px;
-  margin-left: 67px;
+  margin-top: 2.5vw;
+  margin-left: 2vw;
   cursor: pointer;
+  height: 1.5vw;
 }
 
 .menu-btn{
@@ -134,6 +134,14 @@ body{
   height: 1.5vw;
 }
 
+
+
+.menu-bottom{
+  display: block; 
+  margin: auto;
+  width: 10vw; 
+  margin-top: 2vw;
+}
 /*===========bottom==================================================*/
 .bottom ul {
   display: flex;
@@ -191,16 +199,15 @@ body{
   justify-content: center;
   align-items: center;
   margin-top: 1vw;
-  
   width:98vw;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(340px,350px));
+  grid-template-columns: repeat(auto-fill,minmax(0vw,21vw));
+
   
 }
 
 .portfolio-img img{
-  width: 340px;
-  height: 473px;
+  width: 20vw;
   object-fit: cover;
   object-position: center;
 
@@ -238,6 +245,14 @@ video{
   margin: auto;
 }
 
+/*================portfolio detail=========================================*/
+.p-detail-img img{
+  width: 65vw;
+}
+
+.p-detail-img-top{
+  margin-top: 3vw;
+}
 /* ========index============================================= */
 
 
@@ -280,7 +295,7 @@ video{
   position: absolute;
   justify-content: center;
   align-items: center;
-  margin-top: 2vw;
+  margin-top: 4vw;
   width:98vw;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(15vw, 14vw));
@@ -295,21 +310,54 @@ video{
 }
 
 /*==========profile - detail==========================================*/
+.pf-detail{
+  text-align: center;
+  margin-top: 15vw;
+}
+
+.pf-detail-name{
+  font-size: 2vw;
+}
+
+.pf-detail-img{
+  margin-top: 3.5vw;
+  width: 37vw;
+}
+
+.pf-detail-email{
+  margin-top: 4vw;
+  font-size: 1.2vw;
+}
 .pf-detail-category ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin-top: 5vw;
+  margin-top: 10vw;
 }
 
 .pf-detail-category ul li{
   float: left;
-  margin: 0 1vw;
+  margin: 0 4vw;
+  margin-top: 10vw;
   font-size: 1vw;
 }
 
-.pf-detail-category ul li img{
-  
+.pf-detail-p-img{
+  width: 18vw;
+}
+
+.pf-detail-num{
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 3vw;
+  color: #3A3A3A;
+}
+
+.pf-detail-p{
+  text-align: center;
+  font-family: EngFont;
+  font-size: 1.7vw;
+  margin-top: 0.5vw;
 }
 
 /*===========offline==================================================*/
@@ -329,4 +377,9 @@ video{
 }
 .offline-category div{
   margin-top: 8vw;
+}
+
+/*================about us=========================================*/
+.aboutus img{
+  width: 100%;
 }
