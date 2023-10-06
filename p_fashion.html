@@ -27,29 +27,27 @@
 
 <body>
 	
-	<div class="nav-nar">
-		<img src="images/btn_menu.svg" class="menu-btn">
-	
-		<div class="side-bar">
-			<div class="close-btn">
-				<img src="images/btn_close.svg">
-			</div>
-			<div class="menu">
-				<img src="images/category_logo.png" style="display: block; margin:auto; margin-bottom: 52px; margin-top: 76px;">
-				<img src="images/img_category_line.svg" style="display: block; margin:auto; margin-top: 30px;">
-				<div class="item"><a href="profile.html">Profile</a></div>
-				<div class="item"><a href="#">Portfolio</a></div>
-				<div class="item2"><a href="p_woven.html">Woven</a></div>
-				<div class="item2"><a href="p_surface.html">Surface</a></div>
-				<div class="item2"><a href="p_fashion.html">Fashion</a></div>
-				<div class="item"><a href="offline.html">Offline</a></div>
-				<div class="item"><a href="guestbook.html">Guestbook</a></div>
-				<img src="images/category_bottom_logo.svg" style="display: block; margin: auto; margin-top: 50px;">
-				
-			</div>
+	<img src="images/btn_menu.svg" class="menu-btn">
+	<div class="side-bar">
+		<div>
+			<img src="images/btn_close.svg" class="close-btn">
 		</div>
-		
+		<div class="menu">
+			<img src="images/category_logo.png" class="menu-logo" >
+			<img src="images/img_category_line.svg" class="menu-line">
+            <div class="item"><a href="aboutus.html">About Us</a></div>
+			<div class="item"><a href="profile.html">Profile</a></div>
+			<div class="item"><a href="p_woven.html">Portfolio</a></div>
+			<div class="item2"><a href="p_woven.html">Woven</a></div>
+			<div class="item2"><a href="p_surface.html">Surface</a></div>
+			<div class="item2"><a href="p_fashion.html">Fashion</a></div>
+			<div class="item"><a href="offline.html">Offline</a></div>
+			<div class="item"><a href="guestbook.html">Guestbook</a></div>
+			<img src="images/category_bottom_logo.svg"class="menu-bottom" >
+			
+		</div>
 	</div>
+
 	<a href="index.html"><img src="images/web_logo.png" class="web-logo"></a>
 	<div class="left-logo">Portfolio</div>
 
@@ -84,22 +82,11 @@
 		<div><img src="https://images.unsplash.com/photo-1689352289237-cea3b7d914cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=600&q=60"><p>홍지연</p></div>
 	
 	</div>
-
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('.menu-btn').click(function(){
-				$('.side-bar').addClass('active');
-				$('.menu-btn').css("visibility","hidden");
-			});
-
-			$('.close-btn').click(function(){
-				$('.side-bar').removeClass ('active');
-				$('.side-bar').removeClass ('active2');
-				$('.menu-btn').css("visibility","visible");
-			});
-
-		});
+	<div id="footer-container"></div>
+	
+	<script src="script.js">
 	</script>
+
 	
 	
 

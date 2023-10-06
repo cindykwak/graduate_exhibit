@@ -147,6 +147,12 @@ body{
   margin-top: 2vw;
 }
 /*===========bottom==================================================*/
+
+#bottom{
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+}
 .bottom ul {
   display: flex;
   justify-content: center;
