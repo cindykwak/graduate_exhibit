@@ -146,11 +146,11 @@ body{
   width: 10vw; 
   margin-top: 2vw;
 }
-/*===========bottom==================================================*/
+/*===========footer==================================================*/
 
 #bottom{
   width: 100%;
-  bottom: 0px;
+  
   position: absolute;
 }
 .bottom ul {
@@ -392,4 +392,34 @@ video{
 /*================about us=========================================*/
 .aboutus img{
   width: 100%;
+}
+
+/*=========gusetbook===============================================*/
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
 }

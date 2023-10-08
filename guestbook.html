@@ -53,6 +53,37 @@
 	
 	<hr class="hr-top">
 
+	<h1>방명록</h1>
+    <form id="guestbook-form">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required><br>
+        <label for="message">내용:</label>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">작성</button>
+    </form>
+    <div id="guestbook-entries">
+        <!-- 방명록 항목들이 여기에 표시됩니다. -->
+    </div>
+
+    <!-- 이미지 목록 (6개 이미지) -->
+    <div id="image-list" style="display: none;">
+        <img src="images/1.png" alt="Image 1" class="popup-trigger" data-image-index="1">
+        <img src="images/2.png" alt="Image 2" class="popup-trigger" data-image-index="2">
+        <img src="images/3.png" alt="Image 3" class="popup-trigger" data-image-index="3">
+        <img src="images/4.png" alt="Image 4" class="popup-trigger" data-image-index="4">
+        <img src="images/5.png" alt="Image 5" class="popup-trigger" data-image-index="5">
+        <img src="images/6.png" alt="Image 6" class="popup-trigger" data-image-index="6">
+    </div>
+
+    <!-- 팝업 창 -->
+    <div id="popup" style="display: none;">
+        <img id="popup-image" src="" alt="">
+        <p id="popup-text"></p>
+        <button id="close-popup">닫기</button>
+    </div>
+
 	<div id="footer-container"></div>
 	
 	<script src="script.js">
